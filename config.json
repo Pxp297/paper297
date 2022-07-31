@@ -1,0 +1,40 @@
+{
+    "parse":{
+        "dataset":"hdfs",
+        "parameters":{
+            "log_file":"/home/amax/users/circle/NeuralLog/neurallog/dataset/HDFS/HDFS.log",
+            "label_file":"/home/amax/users/circle/NeuralLog/neurallog/dataset/HDFS/anomaly_label.csv",
+            "e_type":"bert",
+            "save_pickle":"hdfs_rep.gzip",
+            "tokenizer_path":"/home/amax/users/circle/NeuralLog/neurallog/dw_models/bert-base-uncased",
+            "parsing_length":90000
+        }
+        
+    },
+    "train":{
+        "device":"cuda",
+        "model_name":"LogRep_Vanilla",
+        "save_step":5,
+        "save_path":"./model_save",
+        "batch_size":64,
+        "max_epoch":40,
+        "init_lr":0.001
+    },
+    "model":{
+        "embedding_size":1168,
+        "d_k":1168,
+        "d_ff":2048,
+        "num_layers":1,
+        "num_heads":10,
+        "dropout":0.1,
+        "padding_size":200,
+        "device":"cuda",
+        "seq_len":50,
+        "exclude_keys":[],
+        "connect_way":"concat",
+        "data_keys":["EventSequence","NumSequence","PositionSequence"]
+    },
+    "representation-data":["/data/amax/users/circle/BGL_data_3.7.pkl.gzip"],
+    "train_set_length":8000,
+    "random_offset":true
+}
