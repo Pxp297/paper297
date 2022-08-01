@@ -89,11 +89,11 @@ LogRep_S       768              64
 LogRep         768              64
 
 BGL dataset
-LogRep_SPN     1168             64
-LogRep_SP      968              64
-LogRep_SN      968              64
-LogRep_S       768              64
-LogRep         768              64
+LogRep_SPN     1168             200
+LogRep_SP      968              200
+LogRep_SN      968              200
+LogRep_S       768              200
+LogRep         768              200
 ```
 
 With the `random_offset` option turned on 
